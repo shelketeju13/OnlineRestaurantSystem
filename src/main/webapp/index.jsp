@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Registration Page</title>
+<title>Home Page</title>
 <link rel="stylesheet" href="./CSS1/style.css">
 </head>
 <body>
