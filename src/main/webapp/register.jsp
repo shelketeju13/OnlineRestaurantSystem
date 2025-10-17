@@ -25,7 +25,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Register - Restaurant System</title>
-    <link rel="stylesheet" href="./CSS/styles1.css">
+    <link rel="stylesheet" href="./CSS1/styles.css">
 </head>
 <body>
     <div class="container">
