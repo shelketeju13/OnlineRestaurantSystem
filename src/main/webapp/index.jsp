@@ -14,7 +14,7 @@
             <h2>MyRestaurant</h2>
             <ul>
                 <li><a href="index.jsp">Home</a></li>
-                <li><a href="menu.jsp">Menu</a></li>
+                <li><a href="Menu.jsp">Menu</a></li>
                 <li><a href="about.jsp">About</a></li>
                 <li><a href="contact.jsp">Contact</a></li>
                 <li><a href="login.jsp" class="active">Login / Register</a></li>
