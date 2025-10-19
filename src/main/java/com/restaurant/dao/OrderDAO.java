@@ -8,8 +8,11 @@ import com.restaurant.model.Order;
 import com.restaurant.util.DBUtil;
 
 public class OrderDAO {
-	public boolean saveOrder(Order order) {
-        String sql = "INSERT INTO orders (username, item_name, quantity, address) VALUES (?, ?, ?, ?)";
+    public boolean saveOrder(Order order) {
+        boolean success = false;
+
+        String sql = "INSERT INTO orders (username, item_name, quantity, address, total_price) VALUES (?, ?, ?, ?, ?)";
+
         try (Connection con = DBUtil.getConnection();
              PreparedStatement ps = con.prepareStatement(sql)) {
 
@@ -17,11 +20,16 @@ public class OrderDAO {
             ps.setString(2, order.getItemName());
             ps.setInt(3, order.getQuantity());
             ps.setString(4, order.getAddress());
+            ps.setDouble(5, order.getQuantity() * order.getPrice()); // total price calculation
 
-            return ps.executeUpdate() > 0;
-        } catch (SQLException e) {
+            int rows = ps.executeUpdate();
+            success = rows > 0;
+
+        } catch (Exception e) {
             e.printStackTrace();
-            return false;
         }
+
+        return success;
     }
+
 }
