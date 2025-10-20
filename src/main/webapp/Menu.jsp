@@ -56,10 +56,10 @@
         <div class="menu-list">
           <% for(MenuItem item : items) { %>
             <div class="menu-item">
-              <!-- <img src="images/<%= item.getImage() %>" alt="<%= item.getName() %>">-->
               <h3><%= item.getName() %></h3>
               <p><%= item.getDescription() %></p>
               <p class="price">₹<%= item.getPrice() %></p>
+
               <form action="order.jsp" method="get">
                  <input type="hidden" name="id" value="<%= item.getId() %>">
                  <input type="hidden" name="name" value="<%= item.getName() %>">
