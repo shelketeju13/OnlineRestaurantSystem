@@ -20,7 +20,7 @@ public class OrderDAO {
             ps.setString(2, order.getItemName());
             ps.setInt(3, order.getQuantity());
             ps.setString(4, order.getAddress());
-            ps.setDouble(5, order.getQuantity() * order.getPrice()); // total price calculation
+            ps.setDouble(5, order.getQuantity() * order.getPrice()); 
 
             int rows = ps.executeUpdate();
             success = rows > 0;
