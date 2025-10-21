@@ -8,7 +8,6 @@
 </head>
 <body>
 <%
-    // ✅ Fix session attribute name
     String username = (String) session.getAttribute("user");
     if (username == null) {
 %>
@@ -20,7 +19,7 @@
     </div>
 <%
     } else {
-        // Retrieve order details
+      
         String itemName = request.getParameter("name");
         double price = Double.parseDouble(request.getParameter("price"));
 %>
