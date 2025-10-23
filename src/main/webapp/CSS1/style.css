@@ -1,5 +1,5 @@
 @charset "UTF-8";
-/* Sidebar and layout */
+
 body {
     background: #f5f5f5;
     font-family: Arial, sans-serif;
@@ -11,7 +11,6 @@ body {
     min-height: 100vh;
 }
 
-/* Sidebar */
 .sidebar {
     background: #222;
     color: #fff;
@@ -19,13 +18,13 @@ body {
     padding: 20px;
     display: flex;
     flex-direction: column;
-    justify-content: center; /* vertical center */
-    align-items: center;     /* horizontal center */
-    text-align: center;      /* ensures links text is centered */
+    justify-content: center; 
+    align-items: center;
+    text-align: center;      
 }
 
 .sidebar h2 {
-    color: #ff6600; /* Restaurant name in orange */
+    color: #ff6600; 
     margin-bottom: 20px;
     font-size: 24px;
 }
@@ -52,16 +51,15 @@ body {
 }
 
 .sidebar ul li a:hover {
-    background: #ff6600; /* Orange on hover */
+    background: #ff6600; 
     color: #fff;
 }
 
 .sidebar ul li a.active {
-    background: #ff6600; /* Active menu item */
+    background: #ff6600; 
     color: #fff;
 }
 
-/* Main content */
 .content {
     flex: 1;
     padding: 30px;
@@ -69,7 +67,6 @@ body {
     background-size: cover;
 }
 
-/* Footer */
 footer {
     background: #222;
     color: #fff;

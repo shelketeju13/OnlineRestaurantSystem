@@ -1,6 +1,5 @@
 @charset "UTF-8";
 
-/* Body background and font */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -8,7 +7,6 @@ body {
     background-size: cover;
 }
 
-/* Center container for the form */
 .container {
     display: flex;
     justify-content: center;
@@ -16,7 +14,6 @@ body {
     height: 100vh;
 }
 
-/* Rounded square form box */
 .form-box {
     background-color: rgba(255, 255, 255, 0.95);
     padding: 40px 50px;
@@ -26,7 +23,6 @@ body {
     text-align: center;
 }
 
-/* Form title */
 .form-box h2 {
     color: #ff6600;
     margin-bottom: 25px;
@@ -34,7 +30,6 @@ body {
     font-weight: bold;
 }
 
-/* Input fields */
 .form-box input[type="text"],
 .form-box input[type="password"] {
     width: 100%;
@@ -45,7 +40,6 @@ body {
     box-sizing: border-box;
 }
 
-/* Submit button */
 .form-box button {
     width: 100%;
     padding: 12px;
@@ -63,7 +57,6 @@ body {
     background-color: #e65c00;
 }
 
-/* Error message */
 .form-box .error {
     color: red;
     margin: 10px 0;
