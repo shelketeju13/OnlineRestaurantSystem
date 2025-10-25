@@ -6,6 +6,7 @@ import com.restaurant.model.MenuItem;
 import com.restaurant.util.DBUtil;
 
 public class MenuDAO {
+
     public List<MenuItem> getAllMenuItems() {
         List<MenuItem> items = new ArrayList<>();
         String sql = "SELECT * FROM menu"; 
@@ -20,9 +21,11 @@ public class MenuDAO {
                 item.setName(rs.getString("name"));
                 item.setDescription(rs.getString("description"));
                 item.setPrice(rs.getDouble("price"));
-                item.setCategory(rs.getString("category")); 
+                item.setCategory(rs.getString("category"));
+                item.setImage(rs.getString("image")); 
                 items.add(item);
             }
+
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -46,11 +49,14 @@ public class MenuDAO {
                 item.setDescription(rs.getString("description"));
                 item.setPrice(rs.getDouble("price"));
                 item.setCategory(rs.getString("category"));
+                item.setImage(rs.getString("image"));
                 items.add(item);
             }
+
         } catch (SQLException e) {
             e.printStackTrace();
         }
+
         return items;
     }
 }
