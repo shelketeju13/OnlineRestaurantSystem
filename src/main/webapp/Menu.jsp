@@ -5,7 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Menu - MyRestaurant</title>
-<link rel="stylesheet" href="./CSS1/menu11.css">
+<link rel="stylesheet" href="./CSS1/menu.css">
 </head>
 <body>
 <div class="container">
@@ -73,15 +73,26 @@
       }
 
       if (search != null && !search.isEmpty()) {
-          items.removeIf(i -> !i.getName().toLowerCase().contains(search.toLowerCase()));
+          List<MenuItem> filtered = new ArrayList<>();
+          for (MenuItem i : items) {
+              if (i.getName().toLowerCase().contains(search.toLowerCase())) {
+                  filtered.add(i);
+              }
+          }
+          items = filtered;
       }
 
-      if (min != null) {
-          items.removeIf(i -> i.getPrice() < min);
+      if (min != null || max != null) {
+          List<MenuItem> filteredByPrice = new ArrayList<>();
+          for (MenuItem i : items) {
+              boolean valid = true;
+              if (min != null && i.getPrice() < min) valid = false;
+              if (max != null && i.getPrice() > max) valid = false;
+              if (valid) filteredByPrice.add(i);
+          }
+          items = filteredByPrice;
       }
-      if (max != null) {
-          items.removeIf(i -> i.getPrice() > max);
-      }
+
 
       if ("low".equals(sort)) {
           items.sort(Comparator.comparingDouble(MenuItem::getPrice));
