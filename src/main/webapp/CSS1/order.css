@@ -1,6 +1,5 @@
 @charset "UTF-8";
 
-/* General Body Styling */
 body {
     font-family: 'Poppins', sans-serif;
     background: #f8f8f8;
@@ -8,7 +7,6 @@ body {
     padding: 0;
 }
 
-/* Order Box Container */
 .order-container {
     width: 420px;
     background: #ffffff;
@@ -30,7 +28,6 @@ body {
     font-size: 26px;
 }
 
-/* Label Styling */
 .order-container label {
     display: block;
     margin: 12px 0 6px;
@@ -39,7 +36,6 @@ body {
     font-weight: 500;
 }
 
-/* Input and Textarea Styling */
 .order-container input[type="number"],
 .order-container textarea {
     width: 100%;
@@ -49,10 +45,9 @@ body {
     font-size: 15px;
     outline: none;
     transition: 0.3s;
-    background-color: #ffffff; /* white background */
+    background-color: #ffffff; 
 }
 
-/* Highlight with orange glow, keep background white */
 .order-container input[type="number"]:focus,
 .order-container textarea:focus {
     border-color: #ff6600;
@@ -60,7 +55,6 @@ body {
     box-shadow: 0 0 8px rgba(255, 102, 0, 0.5);
 }
 
-/* Confirm Button */
 .order-container button {
     background: #ff6600;
     color: white;
@@ -79,7 +73,6 @@ body {
     box-shadow: 0 0 10px rgba(230, 92, 0, 0.5);
 }
 
-/* Total and Item Info */
 .order-container p {
     color: #333;
     font-size: 15px;
@@ -89,7 +82,6 @@ body {
     color: #444;
 }
 
-/* Back Link */
 .back-link {
     display: inline-block;
     margin-top: 18px;
@@ -104,7 +96,6 @@ body {
     color: #e65c00;
 }
 
-/* Login Warning */
 .login-warning {
     text-align: center;
     margin-top: 120px;
