@@ -24,6 +24,9 @@
     <h1>Our Menu</h1>
 
     <form method="get" action="Menu.jsp" class="filter-form">
+    
+     <input type="hidden" name="category" value="<%= request.getParameter("category") != null ? request.getParameter("category") : "" %>">
+  
       <input type="text" name="search" placeholder="Search food (e.g. Pizza, Burger)" 
              value="<%= request.getParameter("search") != null ? request.getParameter("search") : "" %>">
 
@@ -45,6 +48,7 @@
     <div class="menu-categories">
       <%
         String category = request.getParameter("category");
+ 
         String[] categories = {"Meals", "Desserts", "Drinks", "Snacks"};
         for (String cat : categories) {
             String activeClass = (category != null && category.equals(cat)) ? "active" : "";
@@ -73,26 +77,16 @@
       }
 
       if (search != null && !search.isEmpty()) {
-          List<MenuItem> filtered = new ArrayList<>();
-          for (MenuItem i : items) {
-              if (i.getName().toLowerCase().contains(search.toLowerCase())) {
-                  filtered.add(i);
-              }
-          }
-          items = filtered;
+          items.removeIf(i -> !i.getName().toLowerCase().contains(search.toLowerCase()));
       }
 
-      if (min != null || max != null) {
-          List<MenuItem> filteredByPrice = new ArrayList<>();
-          for (MenuItem i : items) {
-              boolean valid = true;
-              if (min != null && i.getPrice() < min) valid = false;
-              if (max != null && i.getPrice() > max) valid = false;
-              if (valid) filteredByPrice.add(i);
-          }
-          items = filteredByPrice;
+      if (min != null && max != null) {
+          items.removeIf(i -> i.getPrice() < min || i.getPrice() > max);
+      } else if (min != null) {
+          items.removeIf(i -> i.getPrice() < min);
+      } else if (max != null) {
+          items.removeIf(i -> i.getPrice() > max);
       }
-
 
       if ("low".equals(sort)) {
           items.sort(Comparator.comparingDouble(MenuItem::getPrice));
