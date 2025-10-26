@@ -1,0 +1,80 @@
+@charset "UTF-8";
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background: #f8f8f8;
+}
+
+.order-container {
+    width: 450px;
+    background: white;
+    margin: 80px auto;
+    padding: 30px 40px;
+    border-radius: 15px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    text-align: center;
+}
+
+.order-container h2 {
+    color: #ff6600;
+    margin-bottom: 25px;
+    font-size: 26px;
+}
+
+.bill {
+    background: #fff;
+    border: 1px solid #ddd;
+    padding: 20px;
+    border-radius: 12px;
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+.bill h3 {
+    color: #ff6600;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.bill p {
+    font-size: 16px;
+    margin: 8px 0;
+}
+
+.bill .thank-you {
+    text-align: center;
+    margin-top: 15px;
+    font-weight: bold;
+    color: #28a745; 
+}
+
+.home-btn {
+    display: inline-block;
+    text-decoration: none;
+    color: #fff;
+    background-color: #ff6600;
+    padding: 10px 25px;
+    border-radius: 10px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.home-btn:hover {
+    background-color: #e65c00;
+}
+
+.order-container h2:nth-child(1) {
+    font-size: 28px;
+}
+
+.order-container p {
+    font-size: 16px;
+    color: #333;
+}
+
+.order-container h2:after {
+    content: '';
+    display: block;
+    margin-top: 10px;
+}

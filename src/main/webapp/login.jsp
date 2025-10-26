@@ -13,7 +13,7 @@
 
         if (valid) {
             session.setAttribute("user", username);
-            response.sendRedirect("index.jsp"); // Go to home page
+            response.sendRedirect("index.jsp"); // Redirect to home page
             return;
         } else {
             message = "Invalid username or password!";
@@ -32,8 +32,10 @@
         <div class="form-box">
             <h2>Login</h2>
             <form method="post">
-                <input type="text" name="username" placeholder="Enter Username" required><br>
-                <input type="password" name="password" placeholder="Enter Password" required><br>
+                <input type="text" name="username" placeholder="Enter Username" required>
+                <br>
+                <input type="password" name="password" placeholder="Enter Password" required>
+                <br>
                 <button type="submit">Login</button>
             </form>
             <p class="error"><%= message %></p>

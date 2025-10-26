@@ -1,73 +1,71 @@
 @charset "UTF-8";
 
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    /*background: #f5f5f5 url("../images/img3.jpg") no-repeat center center fixed;*/
-    background-size: cover;
-}
+ body { 
+	font-family: Arial, sans-serif;
+  	margin: 0; /*background: #f5f5f5 url("../images/img3.jpg") no-repeat center center fixed;*/ 
+  	background-size: cover;
+} 
 
 .container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+	display: flex; 
+	justify-content: center; 
+	align-items: center; 
+	height: 100vh;
 }
 
 .form-box {
-    background-color: rgba(255, 255, 255, 0.95);
-    padding: 40px 50px;
-    border-radius: 20px;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
-    width: 350px;
-    text-align: center;
-}
+	background-color: rgba(255, 255, 255, 0.95); 
+	padding: 40px 50px;
+	border-radius: 20px; 
+	box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+	width: 350px; 
+	text-align: center; 
+} 
 
 .form-box h2 {
-    color: #ff6600;
-    margin-bottom: 25px;
-    font-size: 28px;
-    font-weight: bold;
-}
-
+	color: #ff6600; 
+	margin-bottom: 25px; 
+	font-size: 28px; 
+	font-weight: bold; 
+} 
 .form-box input[type="text"],
 .form-box input[type="password"] {
-    width: 100%;
-    padding: 12px;
-    margin: 10px 0;
-    border-radius: 10px;
-    border: 1px solid #ccc;
-    box-sizing: border-box;
-}
+	width: 100%;
+	 padding: 12px;
+	 margin: 10px 0; 
+	 border-radius: 10px; 
+	 border: 1px solid #ccc; 
+	 box-sizing: border-box; 
+} 
 
 .form-box button {
-    width: 100%;
-    padding: 12px;
-    background-color: #ff6600;
-    color: #fff;
-    border: none;
-    border-radius: 12px;
-    font-size: 16px;
-    cursor: pointer;
-    margin-top: 15px;
-    transition: 0.3s;
-}
+	width: 100%; 
+	padding: 12px; 
+	background-color: #ff6600; 
+	color: #fff; border: none; 
+	border-radius: 12px; 
+	font-size: 16px; 
+	cursor: pointer; 
+	margin-top: 15px; 
+	transition: 0.3s; 
+} 
 
-.form-box button:hover {
-    background-color: #e65c00;
-}
+.form-box button:hover { 
+	background-color: #e65c00; 
+} 
 
-.form-box .error {
-    color: red;
-    margin: 10px 0;
-    font-weight: bold;
-}
+.form-box .error { 
+	color: red;
+	margin: 10px 0; 
+	font-weight: bold; 
+} 
 
 .form-box p a {
-    color: #ff6600;
-    text-decoration: none;
+	color: #ff6600; 
+	text-decoration: none;
 }
 
-.form-box p a:hover {
-    text-decoration: underline;
+.form-box p a:hover { 
+	text-decoration: underline;
 }
+
