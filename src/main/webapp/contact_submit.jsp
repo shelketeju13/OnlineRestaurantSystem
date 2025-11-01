@@ -10,17 +10,6 @@
 <body>
 <div class="container">
 
-    <aside class="sidebar">
-        <h2>MyRestaurant</h2>
-        <ul>
-            <li><a href="index.jsp">Home</a></li>
-            <li><a href="Menu.jsp">Menu</a></li>
-            <li><a href="about.jsp">About</a></li>
-            <li><a href="contact.jsp" class="active">Contact</a></li>
-            <li><a href="login.jsp">Login / Register</a></li>
-        </ul>
-    </aside>
-
     <main class="content">
 <%
     request.setCharacterEncoding("UTF-8");
