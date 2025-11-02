@@ -13,7 +13,7 @@
 
         if (valid) {
             session.setAttribute("user", username);
-            response.sendRedirect("index.jsp"); // Go to home page
+            response.sendRedirect("index.jsp"); 
             return;
         } else {
             message = "Invalid username or password!";
