@@ -9,17 +9,7 @@
 </head>
 <body>
 <div class="container">
-  <aside class="sidebar">
-    <h2>MyRestaurant</h2>
-    <ul>
-      <li><a href="index.jsp">Home</a></li>
-      <li><a href="Menu.jsp" class="active">Menu</a></li>
-      <li><a href="about.jsp">About</a></li>
-      <li><a href="contact.jsp">Contact</a></li>
-      <li><a href="login.jsp">Login / Register</a></li>
-    </ul>
-  </aside>
-
+ 
   <main class="content">
     <h1>Our Menu</h1>
 
@@ -56,7 +46,7 @@
           <a href="Menu.jsp?category=<%= cat %>" class="<%= activeClass %>"><%= cat %></a>
       <% } %>
     </div>
-
+ 
     <%
  
       MenuDAO dao = new MenuDAO();
@@ -117,6 +107,9 @@
             </div>
           <% } %>
         </div>
+        <div class="bottom-bar">
+    		<a href="index.jsp">← Back to Home</a>
+		</div>
     <%
       }
     %>

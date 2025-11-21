@@ -46,13 +46,14 @@
             <p>Your satisfaction is our priority. We’re here to serve you with a smile.</p>
         </div>
     </section>
- 
-	<div class="bottom-nav">
-    	<a href="index.jsp" class="back-btn">← Back to Home</a>
+    
+    <div class="bottom-bar">
+    	<a href="index.jsp">← Back to Home</a>
 	</div>
     
 
 </div>
+
 
 <footer>
     <p>&copy; 2025 MyRestaurant. All rights reserved.</p>

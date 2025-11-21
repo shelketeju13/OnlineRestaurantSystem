@@ -11,48 +11,24 @@ body {
     min-height: 100vh;
 }
 
-.sidebar {
-    background: #222;
-    color: white;
-    width: 220px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+
+.bottom-bar {
     text-align: center;
-    padding: 20px;
+    margin: 20px 0;  
 }
 
-.sidebar h2 {
-    color: #ff6600;
-    margin-bottom: 20px;
-    text-align: center;
-}
-
-.sidebar ul {
-    list-style: none;
-    padding: 0;
-    width: 100%;
-}
-
-.sidebar ul li {
-    text-align: center;
-    margin: 10px 0;
-}
-
-.sidebar ul li a {
+.bottom-bar a {
+    background: #ff6600;
     color: #fff;
+    padding: 12px 25px;
+    border-radius: 8px;
     text-decoration: none;
-    display: block;
-    padding: 10px;
-    border-radius: 6px;
+    font-size: 18px;
     transition: 0.3s;
 }
 
-.sidebar ul li a:hover,
-.sidebar ul li a.active {
-    background: #ff6600;
-    color: #fff;
+.bottom-bar a:hover {
+    background: #e65c00;
 }
 
 
@@ -126,6 +102,7 @@ body {
     flex-wrap: wrap;
     justify-content: center;
     gap: 25px;
+    margin-bottom:40px;
 }
 
 .menu-item {
@@ -182,7 +159,7 @@ body {
 .no-items {
     text-align: center;
     color: #999;
-    margin-top: 30px;
+    margin: 30px 0;
 }
 
 footer {

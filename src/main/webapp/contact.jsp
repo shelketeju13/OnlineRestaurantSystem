@@ -8,18 +8,6 @@
 </head>
 <body>
 <div class="container">
-
-    <aside class="sidebar">
-        <h2>MyRestaurant</h2>
-        <ul>
-            <li><a href="index.jsp">Home</a></li>
-            <li><a href="Menu.jsp">Menu</a></li>
-            <li><a href="about.jsp">About</a></li>
-            <li><a href="contact.jsp" class="active">Contact</a></li>
-            <li><a href="login.jsp">Login / Register</a></li>
-        </ul>
-    </aside>
-
     <main class="content">
         <section class="contact-hero">
             <h1>Contact Us</h1>
@@ -46,9 +34,13 @@
                 <p><b>🕒 Working Hours:</b> 9:00 AM – 11:00 PM (All Days)</p>
             </div>
         </section>
+        
+        <div class="bottom-bar">
+    		<a href="index.jsp">← Back to Home</a>
+		</div>
 
-    </main>
-
+    </main>    
+    
 </div>
 
 <footer>

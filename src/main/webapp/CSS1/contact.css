@@ -10,46 +10,24 @@ body {
 	min-height: 100vh; 
 } 
 
-.sidebar { 
-	background: #000; 
-	color: white; 
-	width: 220px;  
-	display: flex; 
-	flex-direction: column; 
-	justify-content:center; 
-	text-align:center; 
-	align-items: center; 
-	padding: 20px; 
+.bottom-bar {
+    text-align: center;
+    margin: 20px 0;  
 }
- 
-.sidebar h2 { 
-	color: #ff6600; 
-	margin-bottom: 20px; 
-} 
 
-.sidebar ul {
-	list-style: none; 
-	padding: 0; 
-	width: 100%; 
-} 
+.bottom-bar a {
+    background: #ff6600;
+    color: #fff;
+    padding: 12px 25px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 18px;
+    transition: 0.3s;
+}
 
-.sidebar ul li {
-	margin: 10px 0; 
-} 
-
-.sidebar ul li a {
-	color: #fff; 
-	text-decoration: none; 
-	display: block;
-	padding: 10px; 
-	border-radius: 6px; 
-	transition: 0.3s; 
-} 
-
-.sidebar ul li a:hover, .sidebar ul li a.active {
-	background: #ff6600; 
-	color: #fff; 
-} 
+.bottom-bar a:hover {
+    background: #e65c00;
+}
 
 .content { 
 	flex: 1; 
