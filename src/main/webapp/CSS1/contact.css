@@ -53,7 +53,7 @@ body {
 .contact-section { 
 	display: flex;
     justify-content: space-between;
-    align-items: stretch; /* makes both columns equal height */
+    align-items: stretch; 
     flex-wrap: wrap;
     gap: 30px;
     margin-bottom: 50px;
