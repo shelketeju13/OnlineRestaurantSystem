@@ -13,7 +13,6 @@ public class UserDAO {
         return DriverManager.getConnection("jdbc:mysql://localhost:3306/restaurant_db", "root", "teju132005");
     }
 
-    // Register user
     public boolean registerUser(User user) {
         try (Connection con = getConnection()) {
             PreparedStatement check = con.prepareStatement("SELECT * FROM users WHERE username=?");
