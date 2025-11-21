@@ -12,7 +12,7 @@ body {
     padding: 20px 0;
     text-align: center;  
 }
-
+/*
 .back-btn {
     background: #ff6600;
     padding: 12px 20px;
@@ -23,9 +23,9 @@ body {
     transition: 0.3s;
     display: inline-block;
 }
-
+*/
 .back-btn:hover {
-    background: #e65c00;
+    color: #e65c00;
 }
 
 
