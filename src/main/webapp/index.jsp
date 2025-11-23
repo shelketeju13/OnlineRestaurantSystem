@@ -24,7 +24,7 @@
                 <li><a href="contact.jsp"><i class="fas fa-phone-alt"></i> Contact</a></li>
                 <li><a href="login.jsp"><i class="fas fa-user"></i> Login / Register</a></li>
                 <li><a href="logout.jsp"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
-                
+                <li><a href="admin/admin_login.jsp"><i class="fas fa-user-shield"></i> Admin Login</a></li>
             </ul>
         </div>
 
