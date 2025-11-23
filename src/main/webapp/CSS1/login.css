@@ -30,7 +30,8 @@ body {
 }
 
 .form-box input[type="text"],
-.form-box input[type="password"] {
+.form-box input[type="password"],
+.form-box input[type="email"] {
     width: 100%;
     padding: 12px;
     margin: 10px 0; 
@@ -43,7 +44,8 @@ body {
 }
 
 .form-box input[type="text"]:focus,
-.form-box input[type="password"]:focus {
+.form-box input[type="password"]:focus,
+.form-box input[type="email"]:focus{
     border-color: #ff6600;
     box-shadow: 0 0 6px rgba(255,102,0,0.5);
 }
