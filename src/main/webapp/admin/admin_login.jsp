@@ -18,7 +18,6 @@
         boolean valid = dao.validateAdmin(username, password);
 
         if (valid) {
-            // Redirect to dashboard with admin name
             response.sendRedirect("admin_dashboard.jsp?admin=" + username);
             return;
         } else {
@@ -26,6 +25,7 @@
         }
     }
 %>
+
 
 <!DOCTYPE html>
 <html>
@@ -60,4 +60,3 @@
 
 </body>
 </html>
-    

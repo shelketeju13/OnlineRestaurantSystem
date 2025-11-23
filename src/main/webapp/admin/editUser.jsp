@@ -1,5 +1,71 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ page import="com.restaurant.dao.UserDAO, com.restaurant.model.User" %>
+<%@ page import="java.util.List" %>
+<%
+    UserDAO dao = new UserDAO();
+    String id = request.getParameter("id");
+    User user = null;
+
+    if (id != null) {
+        List<User> all = dao.getAllUsers();
+        for(User u : all) {
+            if(u.getId().equals(id)) {
+                user = u;
+            }
+        }
+    }
+
+    String msg = "";
+    if ("POST".equalsIgnoreCase(request.getMethod())) {
+        String fullname = request.getParameter("fullname");
+        String email = request.getParameter("email");
+        String phone = request.getParameter("phone");
+        String username = request.getParameter("username");
+        String password = request.getParameter("password");
+
+        User updated = new User(id, fullname, email, phone, username, password);
+
+        if (dao.updateUser(updated)) {
+            msg = "User updated successfully!";
+        } else {
+            msg = "Update failed!";
+        }
+    }
+%>
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+    <title>Edit User</title>
+    <link rel="stylesheet" href="../CSS1/edituser.css">
+</head>
+<body>
+
+<h2>Edit User</h2>
+<p style="color:green;"><%= msg %></p>
+
+<form method="post">
+
+    Full Name: <input type="text" name="fullname" value="<%= user.getFullname() %>" required><br><br>
+
+    Email: <input type="email" name="email" value="<%= user.getEmail() %>" required><br><br>
+
+    Phone: <input type="text" name="phone" value="<%= user.getPhone() %>" required><br><br>
+
+    Username: <input type="text" name="username" value="<%= user.getUsername() %>" required><br><br>
+
+    Password: <input type="text" name="password" value="<%= user.getPassword() %>" required><br><br>
+
+    <button type="submit">Update</button>
+
+</form>
+
+</body>
+</html>
+    
+<%-- 
 <%@ page import="java.sql.*" %>
 <!DOCTYPE html>
 <html>
@@ -120,4 +186,4 @@
 
 </body>
 </html>
-    
+ --%>   
