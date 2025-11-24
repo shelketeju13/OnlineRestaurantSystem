@@ -118,17 +118,17 @@ public class UserDAO {
     }
     
  // UPDATE USER
+ // UPDATE USER WITHOUT PASSWORD
     public boolean updateUser(User user) {
         try (Connection con = getConnection()) {
             PreparedStatement ps = con.prepareStatement(
-                "UPDATE users SET fullname=?, email=?, phone=?, username=?, password=? WHERE id=?"
+                "UPDATE users SET fullname=?, email=?, phone=?, username=? WHERE id=?"
             );
             ps.setString(1, user.getFullname());
             ps.setString(2, user.getEmail());
             ps.setString(3, user.getPhone());
             ps.setString(4, user.getUsername());
-            ps.setString(5, user.getPassword());
-            ps.setString(6, user.getId());
+            ps.setString(5, user.getId());
 
             return ps.executeUpdate() > 0;
         } catch (Exception e) {
@@ -136,6 +136,30 @@ public class UserDAO {
             return false;
         }
     }
+
+ // GET USER BY ID
+    public User getUserDetailsById(String id) {
+        try (Connection con = getConnection()) {
+            PreparedStatement ps = con.prepareStatement("SELECT * FROM users WHERE id=?");
+            ps.setString(1, id);
+            ResultSet rs = ps.executeQuery();
+
+            if (rs.next()) {
+                return new User(
+                    rs.getString("id"),
+                    rs.getString("fullname"),
+                    rs.getString("email"),
+                    rs.getString("phone"),
+                    rs.getString("username"),
+                    rs.getString("password")
+                );
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
 
 
 }

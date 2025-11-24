@@ -1,33 +1,27 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ page import="com.restaurant.dao.UserDAO, com.restaurant.model.User" %>
-<%@ page import="java.util.List" %>
+
 <%
-    UserDAO dao = new UserDAO();
     String id = request.getParameter("id");
+    UserDAO dao = new UserDAO();
     User user = null;
+    String msg = "";
 
     if (id != null) {
-        List<User> all = dao.getAllUsers();
-        for(User u : all) {
-            if(u.getId().equals(id)) {
-                user = u;
-            }
-        }
+        user = dao.getUserDetailsById(id);  
     }
 
-    String msg = "";
     if ("POST".equalsIgnoreCase(request.getMethod())) {
         String fullname = request.getParameter("fullname");
         String email = request.getParameter("email");
         String phone = request.getParameter("phone");
         String username = request.getParameter("username");
-        String password = request.getParameter("password");
 
-        User updated = new User(id, fullname, email, phone, username, password);
+        User updated = new User(id, fullname, email, phone, username);
 
         if (dao.updateUser(updated)) {
-            msg = "User updated successfully!";
+            response.sendRedirect("manage_users.jsp?updated=1");
+            return;
         } else {
             msg = "Update failed!";
         }
@@ -37,153 +31,41 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta charset="UTF-8">
+    <meta charset="UTF-8">
     <title>Edit User</title>
     <link rel="stylesheet" href="../CSS1/edituser.css">
 </head>
 <body>
 
 <h2>Edit User</h2>
-<p style="color:green;"><%= msg %></p>
 
-<form method="post">
-
-    Full Name: <input type="text" name="fullname" value="<%= user.getFullname() %>" required><br><br>
-
-    Email: <input type="email" name="email" value="<%= user.getEmail() %>" required><br><br>
-
-    Phone: <input type="text" name="phone" value="<%= user.getPhone() %>" required><br><br>
-
-    Username: <input type="text" name="username" value="<%= user.getUsername() %>" required><br><br>
-
-    Password: <input type="text" name="password" value="<%= user.getPassword() %>" required><br><br>
-
-    <button type="submit">Update</button>
-
-</form>
-
-</body>
-</html>
+<div class="form-container">
     
-<%-- 
-<%@ page import="java.sql.*" %>
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="UTF-8">
-    <title>Edit User</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f9f9f9;
-            margin: 0;
-            padding: 20px;
-        }
+    <p class="msg success"><%= msg %></p>
 
-        h2 {
-            text-align: center;
-            color: #333;
-        }
+    <form method="post">
 
-        form {
-            width: 50%;
-            margin: 30px auto;
-            padding: 20px;
-            background: #fff;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-            border-radius: 8px;
-        }
+        <label>Full Name</label>
+        <input type="text" name="fullname" value="<%= user.getFullname() %>" required>
 
-        form input[type="text"], 
-        form input[type="email"], 
-        form input[type="password"] {
-            width: 100%;
-            padding: 10px;
-            margin: 8px 0 16px 0;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            box-sizing: border-box;
-        }
+        <label>Email</label>
+        <input type="email" name="email" value="<%= user.getEmail() %>" required>
 
-        form input[type="submit"] {
-            background-color: #ff6600;
-            color: white;
-            padding: 12px 20px;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-            font-size: 16px;
-        }
+        <label>Phone</label>
+        <input type="text" name="phone" value="<%= user.getPhone() %>">
 
-        form input[type="submit"]:hover {
-            background-color:#ff6600 ;
-        }
+        <label>Username</label>
+        <input type="text" name="username" value="<%= user.getUsername() %>" required>
 
-        a {
-            display: block;
-            width: 100px;
-            margin: 20px auto 0;
-            text-align: center;
-            text-decoration: none;
-            color: #007BFF;
-            font-weight: bold;
-        }
+        <button type="submit">Update User</button>
 
-        a:hover {
-            color: #0056b3;
-        }
-    </style>
-</head>
-<body>
+    </form>
 
-<%
-    String id = request.getParameter("id");
-    String url = "jdbc:mysql://localhost:3306/restaurant_db?useSSL=false&allowPublicKeyRetrieval=true";
-    String user = "root";
-    String pass = "teju132005";
+</div>
 
-    Connection conn = null;
-    Statement stmt = null;
-    ResultSet rs = null;
-
-    try {
-        Class.forName("com.mysql.cj.jdbc.Driver");
-        conn = DriverManager.getConnection(url, user, pass);
-        stmt = conn.createStatement();
-
-        if(request.getMethod().equalsIgnoreCase("POST")) {
-            String fullname = request.getParameter("fullname");
-            String email = request.getParameter("email");
-            String phone = request.getParameter("phone");
-            String username = request.getParameter("username");
-
-            stmt.executeUpdate("UPDATE users SET fullname='"+fullname+"', email='"+email+"', phone='"+phone+"', username='"+username+"' WHERE id="+id);
-            response.sendRedirect("manage_users.jsp");
-        }
-
-        rs = stmt.executeQuery("SELECT * FROM users WHERE id="+id);
-        if(rs.next()){
-%>
-<h2>Edit User</h2>
-<form method="post">
-    Full Name: <input type="text" name="fullname" value="<%= rs.getString("fullname") %>" required><br>
-    Email: <input type="email" name="email" value="<%= rs.getString("email") %>" required><br>
-    Phone: <input type="text" name="phone" value="<%= rs.getString("phone") %>"><br>
-    Username: <input type="text" name="username" value="<%= rs.getString("username") %>" required><br>
-    <input type="submit" value="Update">
-</form>
-<a href="manage_users.jsp">Back to Users</a>
-<%
-        }
-    } catch(Exception e){
-        out.println("Error: " + e.getMessage());
-    } finally {
-        if(rs!=null) rs.close();
-        if(stmt!=null) stmt.close();
-        if(conn!=null) conn.close();
-    }
-%>
+<div class="back-container">
+    <a href="manage_users.jsp" class="back-link">Back to Users</a>
+</div>
 
 </body>
 </html>
- --%>   

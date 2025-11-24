@@ -19,16 +19,8 @@ public class User {
         this.password = password;
     }
 
-    public User(String fullname, String email, String phone, String username, String password) {
-        this.fullname = fullname;
-        this.email = email;
-        this.phone = phone;
-        this.username = username;
-        this.password = password;
-    }
-
- 
-    public String getId() { 
+    
+	public String getId() { 
     	return id; 
     }
     public void setId(String id) { 
@@ -58,7 +50,16 @@ public class User {
     public void setUsername(String username) {
     	this.username = username;
     }
-    public String getPassword() { 
+    public User(String id, String fullname, String email, String phone, String username) {
+		super();
+		this.id = id;
+		this.fullname = fullname;
+		this.email = email;
+		this.phone = phone;
+		this.username = username;
+	}
+
+	public String getPassword() { 
     	return password;
     }
     public void setPassword(String password) {
