@@ -1,0 +1,99 @@
+@charset "UTF-8";
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f5f5f5;
+    margin: 0;
+    padding: 20px;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 25px;
+    color: #333;
+    font-size: 26px;
+    font-weight: bold;
+}
+
+form {
+    width: 450px;
+    margin: 0 auto;
+    padding: 30px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+    transition: transform 0.3s;
+}
+
+form:hover {
+    transform: translateY(-3px);
+}
+
+form label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: 600;
+    color: #555;
+}
+
+input[type=text],
+input[type=number],
+textarea {
+    width: 100%;
+    padding: 12px;
+    margin: 8px 0 20px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 15px;
+    box-sizing: border-box;
+    transition: 0.3s;
+}
+
+input:focus,
+textarea:focus {
+    border-color: #0072ff;
+    box-shadow: 0 0 6px rgba(0,114,255,0.3);
+    outline: none;
+}
+
+textarea {
+    height: 90px;
+    resize: none;
+}
+
+.update-btn {
+    width: 100%;
+    background: linear-gradient(90deg, #00c6ff, #0072ff);
+    color: #fff;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.update-btn:hover {
+    background: linear-gradient(90deg, #0072ff, #00c6ff);
+}
+
+.back-btn {
+    display: inline-block;
+    padding: 12px 30px;
+    background: linear-gradient(90deg, #00c6ff, #0072ff);
+    color: #fff;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.back-btn:hover {
+    background: linear-gradient(90deg, #0072ff, #00c6ff);
+}
+
+.back-container {
+    text-align: center;
+    margin-top: 20px;
+}

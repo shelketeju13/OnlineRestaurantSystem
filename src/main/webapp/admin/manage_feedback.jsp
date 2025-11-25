@@ -1,5 +1,80 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ page import="java.util.List" %>
+<%@ page import="com.restaurant.dao.FeedbackDAO" %>
+<%@ page import="com.restaurant.model.Feedback" %>
+
+<%
+    FeedbackDAO dao = new FeedbackDAO();
+    List<Feedback> list = dao.getAllFeedback();
+%>
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Manage Feedback</title>
+
+<link rel="stylesheet" type="text/css" href="../CSS1/manage_feedback.css">
+
+</head>
+<body>
+
+<h2>Manage Customer Feedback</h2>
+
+<div class="table-container">
+<table>
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Subject</th>
+        <th>Message</th>
+        <th>Status</th>
+        <th>Action</th>
+    </tr>
+
+    <%
+        for (Feedback f : list) {
+    %>
+    <tr>
+        <td><%= f.getId() %></td>
+        <td><%= f.getName() %></td>
+        <td><%= f.getEmail() %></td>
+        <td><%= f.getSubject() %></td>
+        <td><%= f.getMessage() %></td>
+        <td><%= f.getStatus() %><td>;
+
+        <td>
+            <form action="update_feedback.jsp" method="post">
+                <input type="hidden" name="id" value="<%= f.getId() %>">
+                <select name="status">
+                    <option value="Pending" <%= f.getStatus().equals("Pending") ? "selected" : "" %>>Pending</option>
+                    <option value="Reviewed" <%= f.getStatus().equals("Reviewed") ? "selected" : "" %>>Reviewed</option>
+                    <option value="Resolved" <%= f.getStatus().equals("Resolved") ? "selected" : "" %>>Resolved</option>
+                </select>
+
+                <button type="submit" class="update-btn">Update</button>
+            </form>
+        </td>
+    </tr>
+    <%
+        }
+    %>
+</table>
+</div>
+
+<div class="back-btn-container">
+    <a href="admin_dashboard.jsp" class="back-btn">Back to Dashboard</a>
+</div>
+
+</body>
+</html>
+
+
+
+<%-- <%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <%@ page import="java.sql.*" %>
 <!DOCTYPE html>
 <html>
@@ -114,4 +189,4 @@
 </div>
 </body>
 </html>
-    
+  --%>  

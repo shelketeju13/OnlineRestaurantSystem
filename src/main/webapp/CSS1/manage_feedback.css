@@ -1,0 +1,103 @@
+@charset "UTF-8";
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background: #f5f5f5;
+}
+
+
+h2 {
+    text-align: center;
+    margin-top: 25px;
+    margin-bottom: 20px;
+    color: #333;
+    font-size: 26px;
+}
+
+
+.table-container {
+    width: 95%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+}
+
+
+table {
+    width: 90%;
+    border-collapse: collapse;
+    background: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+}
+
+
+table th, table td {
+    padding: 12px 15px;
+    color: #333;
+}
+
+
+table th {
+    background: linear-gradient(90deg, #00c6ff, #0072ff);
+    color: #fff;
+    text-transform: uppercase;
+}
+
+
+table tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+
+table tr:hover {
+    background: #dcdcdc;
+}
+
+
+select {
+    padding: 6px 10px;
+    border-radius: 5px;
+    border: 1px solid #aaa;
+    font-size: 14px;
+}
+
+/* Update button */
+.update-btn {
+    padding: 8px 15px;
+    margin-top: 5px;
+    background: linear-gradient(90deg, #00c6ff, #0072ff);
+    color: white;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.update-btn:hover {
+    background: linear-gradient(90deg, #0072ff, #00c6ff);
+}
+
+
+.back-btn-container {
+    text-align: center;
+    margin: 30px 0;
+}
+
+
+.back-btn {
+    padding: 10px 25px;
+    text-decoration: none;
+    background: linear-gradient(90deg, #00c6ff, #0072ff);
+    color: #fff;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.back-btn:hover {
+    background: linear-gradient(90deg, #0072ff, #00c6ff);
+}
