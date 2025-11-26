@@ -1,3 +1,5 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" 
+	pageEncoding="UTF-8"%>
 <%@ page import="com.restaurant.dao.UserDAO, com.restaurant.model.User" %>
 
 <%
@@ -13,15 +15,15 @@
         String username = request.getParameter("username");
         String password = request.getParameter("password");
 
-        User user = new User(fullname, email, phone, username, password);
-        UserDAO dao = new UserDAO();
+        User user = new User(null, fullname, email, phone, username, password);
 
+        UserDAO dao = new UserDAO();
         boolean success = dao.registerUser(user);
 
         if (success) {
             message = "Registered Successfully!";
             msgColor = "green";
-            successFlag = true; 
+            successFlag = true;
         } else {
             message = "Username already exists!";
             msgColor = "red";
@@ -32,13 +34,12 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <link rel="stylesheet" href="./CSS1/login.css">
     <title>Register</title>
+    <link rel="stylesheet" href="./CSS1/login.css">
 
     <style>
         .msg {
             font-size: 18px;
-            margin-top: 10px;
             font-weight: bold;
         }
     </style>
@@ -48,6 +49,7 @@
     <% } %>
 
 </head>
+
 <body>
 <div class="container">
     <div class="form-box">
@@ -69,4 +71,3 @@
 </div>
 </body>
 </html>
-
