@@ -5,7 +5,6 @@
 <%@ page import="com.restaurant.util.DBUtil" %>
 
 <%
-    // Fetch parameters
     String orderId = request.getParameter("order_id");
     String status = request.getParameter("status");
 
@@ -25,7 +24,6 @@
 
             ps.executeUpdate();
 
-            // Redirect back to manage orders page
             response.sendRedirect("manage_orders.jsp");
 
         } catch (Exception e) {

@@ -1,32 +1,24 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ page import="java.sql.*" %>
+<%@ page import="java.sql.Connection" %>
+<%@ page import="java.sql.PreparedStatement" %>
+<%@ page import="com.restaurant.util.DBUtil" %>
 
 <%
     String id = request.getParameter("id");
 
-    if (id != null && !id.trim().isEmpty()) {
+    if (id != null) {
         Connection conn = null;
         PreparedStatement ps = null;
 
         try {
-            Class.forName("com.mysql.cj.jdbc.Driver");
-            conn = DriverManager.getConnection(
-                "jdbc:mysql://localhost:3306/restaurant_db?useSSL=false&allowPublicKeyRetrieval=true",
-                "root",
-                "teju132005"
-            );
-
-            ps = conn.prepareStatement("DELETE FROM feedback WHERE id = ?");
+            conn = DBUtil.getConnection();
+            String sql = "DELETE FROM feedback WHERE id = ?";
+            ps = conn.prepareStatement(sql);
             ps.setInt(1, Integer.parseInt(id));
+            ps.executeUpdate();
 
-            int rows = ps.executeUpdate();
-
-            if (rows > 0) {
-                response.sendRedirect("manage_feedback.jsp");
-            } else {
-                out.println("<p style='color:red; text-align:center;'>No feedback found with this ID.</p>");
-            }
+            response.sendRedirect("manage_feedback.jsp");
 
         } catch (Exception e) {
             out.println("<p style='color:red; text-align:center;'>Error: " + e.getMessage() + "</p>");
@@ -36,7 +28,7 @@
         }
 
     } else {
-        out.println("<p style='color:red; text-align:center;'>Invalid feedback ID.</p>");
+        out.println("<p style='color:red; text-align:center;'>Invalid Feedback ID.</p>");
     }
 %>
     

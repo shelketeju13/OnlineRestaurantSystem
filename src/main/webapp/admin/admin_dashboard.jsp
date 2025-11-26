@@ -63,9 +63,9 @@
             </div>
 
             <div class="box revenue-box">
-                <i class="fas fa-dollar-sign"></i>
+                <i class="fas fa-indian-rupee-sign"></i>
                 <h2>Total Revenue</h2>
-                <p><%= totalRevenue %></p>
+                <p>₹<%= totalRevenue %></p>
             </div>
 
         </div>
